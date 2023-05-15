@@ -16,7 +16,6 @@ import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -108,7 +107,7 @@ public class LoadingButton extends ConstraintLayout {
     }
 
     public void setProgressColor(@ColorRes Integer color) {
-        progressBar.setIndeterminateTintList(ContextCompat.getColorStateList(getContext(), color));
+        progressBar.setIndeterminateTintList(getResources().getColorStateList(color, getContext().getTheme()));
     }
 
     public void setText(String text) {
